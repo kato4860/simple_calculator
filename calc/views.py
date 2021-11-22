@@ -9,9 +9,15 @@ def calc_view(request):
 
     template_name = 'calc/index.html'
     result = request.POST.get('solution')
-    print(result)
+    print(f'RESULT ===>>> {result}')
 
-    if '+' in result:
+    if result is None:
+        result = '''
+        Для расчёта введите два значения.
+        Разделяя знаками + - * / **
+        '''
+
+    elif '+' in result:
         solution = result.split('+')
         print(solution)
         result = float(solution[0]) + float(solution[1])

@@ -8,9 +8,9 @@
 	<form method="post">{% csrf_token %}
 		<!-- Запросим у пользователя ввести данный и операцию между ними (2 + 7) или (8789 / 989). -->
 		<input type="text" name="solution" placeholder="Введите значения...">
-        <button type="submit" name="knopka">Расчитать</button>
+        <input type="submit" name="knopka">
 	</form>
 	<!-- Ниже будем результат решения. -->
-	<p id="result">{{ result }}</p>
+	<p>{{ result }}</p>
 </body>
 </html>
