@@ -1,7 +1,19 @@
 from django.shortcuts import render, reverse
+import subprocess
 
 
 def calc_view(request):
+    if request.method == "POST" and 'start' in request.POST:
+            #если нажата кнопка старт
+            start = request.POST.get('start', False)
+            print("запущено")
+            #пропишем команду и путь до файла
+            script = 'python calc/test.py'
+            #os.system(script)
+            #выпоним команду в терминале
+            subprocess.Popen(script, shell=True)
+
+            return redirect('/calc/index.html', {'start': start})
     """
     Принимаем от пользователя строку
     с математическим выражением +-/*
