@@ -5,6 +5,14 @@
     <title>Самый простецкий калькулятор</title>
 </head>
 <body>
+	<p>форма запуска калькулятора</p>
+	<form action = "/main/mybots/" method = "POST">
+{% csrf_token %}
+		<input id="start" type="hidden" name="start" />
+      <input class="io" id="start" type="submit" name="start"  value="Start"/>
+
+</form>
+	<p>отправка действия на сервер в открытый файл</p>
 	<form method="post">{% csrf_token %}
 		<!-- Запросим у пользователя ввести данный и операцию между ними (2 + 7) или (8789 / 989). -->
 		<input type="text" name="solution" placeholder="Введите значения...">
